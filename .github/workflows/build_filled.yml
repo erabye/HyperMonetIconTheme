@@ -13,27 +13,27 @@ on:
   workflow_dispatch:
     inputs:
       fg_color:
-        description: '前景色FG_COLOR (线条颜色, 例如 #003a71)'
+        description: 'foreground color (e.g #003a71)'
         required: true
         default: '#003a71'
         type: string
       bg_color:
-        description: '背景色BG_COLOR (背景颜色, 例如 #a1cafe)'
+        description: 'background color (e.g #a1cafe)'
         required: true
         default: '#a1cafe'
         type: string
       fill_color:
-        description: '填充色FILL_COLOR (可选, 留空则自动计算)'
+        description: 'fill color (optional, will auto calculate if empty)'
         required: false
         default: ''
         type: string
       theme_name:
-        description: '颜色名称 (用于打包文件名显示, 可选, 例如: light_blue。默认留空)'
+        description: 'theme name to be included (e.g dark_blue)'
         required: false
         default: ''
         type: string
       test_env:
-        description: '是否使用测试目录 (True/False)'
+        description: 'whether test env is used'
         required: false
         default: 'False'
         type: choice
@@ -41,7 +41,7 @@ on:
           - 'True'
           - 'False'
       enable_cache:
-        description: '是否启用填充区域缓存 (True/False)'
+        description: 'whether fill area cache is enabled'
         required: false
         default: 'True'
         type: choice
