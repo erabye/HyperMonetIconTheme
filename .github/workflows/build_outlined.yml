@@ -80,6 +80,8 @@ jobs:
         id: prepareArtifact
         run: |
           moduleName=`ls magisk_HyperMonetIcon*.zip | awk -F '.zip' '{print $1}'` && echo "moduleName=$moduleName" >> $GITHUB_OUTPUT
+          mtzName=`ls mtz_HyperMonetIcon*.mtz | awk -F '.mtz' '{print $1}'` && echo "mtzName=$mtzName" >> $GITHUB_OUTPUT
+
       - name: Upload module
         uses: actions/upload-artifact@v4
         with:
@@ -88,12 +90,10 @@ jobs:
           if-no-files-found: error
           compression-level: 0
 
-      # - name: Upload mtz
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: ${{ steps.prepareArtifact.outputs.mtzName }}.mtz
-      #     path: mtz_HyperMonetIcon*.mtz
-      #     if-no-files-found: error
-      #     compression-level: 0
-
-# mtzName=`ls mtz_HyperMonetIcon*.mtz | awk -F '.mtz' '{print $1}'` && echo "mtzName=$mtzName" >> $GITHUB_OUTPUT
+      - name: Upload mtz
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.prepareArtifact.outputs.mtzName }}.mtz
+          path: mtz_HyperMonetIcon*.mtz
+          if-no-files-found: error
+          compression-level: 0
