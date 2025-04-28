@@ -120,13 +120,13 @@ def build_outlined(test_env: bool):
         ArtifactPathConfig.theme_suffix,
     )
 
-    # # 打包mtz
-    # ThemePacker.pack_mtz(
-    #     str(ArtifactPathConfig.mtz_template_dir),
-    #     ArtifactPathConfig.target_mtz_pattern_outlined,
-    #     ArtifactPathConfig.timestamp,
-    #     ArtifactPathConfig.theme_suffix,
-    # )
+    # 打包mtz
+    ThemePacker.pack_mtz(
+        str(ArtifactPathConfig.mtz_template_dir),
+        ArtifactPathConfig.target_mtz_pattern_outlined,
+        ArtifactPathConfig.timestamp,
+        ArtifactPathConfig.theme_suffix,
+    )
 
     # 运行后清理
     print("\n(6/6) Cleaner: 运行后清理")
